@@ -1,6 +1,10 @@
 NAME = libftprintf.a
 
 SRCS = ft_printf.c \
+	ft_strlen.c \
+	ft_putchar.c \
+	ft_putstr.c \
+	ft_puthexa.c \
 
 INCLUDE = ft_printf.h
 
@@ -14,16 +18,15 @@ AR = ar rcs
 
 OBJS = ${SRCS:.c=.o}
 
-all: ${NAME}
-
 ${NAME}: ${OBJS}
 	@${AR} ${NAME} ${OBJS}
+
+all: ${NAME}
 
 clean:
 	@${RM} ${OBJS}
 
-fclean:
-	@${RM} ${OBJS}
+fclean: clean
 	@${RM} ${NAME}
 
 re: fclean all

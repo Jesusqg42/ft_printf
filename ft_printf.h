@@ -18,6 +18,10 @@
 # include <stdio.h>
 # include <stdarg.h>
 
-int ft_printf(char const *, ...);
+int     ft_printf(char const *str, ...);
+size_t  ft_strlen(char *c);
+int		ft_putchar(char c);
+int     ft_putstr(char *str);
+int     ft_puthexa(void *str);
 
 #endif
