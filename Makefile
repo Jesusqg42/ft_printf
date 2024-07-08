@@ -4,7 +4,7 @@ SRCS = ft_printf.c \
 	ft_strlen.c \
 	ft_putchar.c \
 	ft_putstr.c \
-	ft_puthexa.c \
+	ft_puthexa.c
 
 INCLUDE = ft_printf.h
 

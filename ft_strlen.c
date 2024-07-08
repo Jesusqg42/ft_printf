@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-size_t  ft_strlen(char *s)
+size_t	ft_strlen(char *str)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

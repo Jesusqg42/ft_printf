@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int ft_puthexa(void *str)
+int	ft_puthexa(void *str)
 {
-
+	
 }
