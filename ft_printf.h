@@ -22,6 +22,6 @@ int		ft_printf(char const *str, ...);
 size_t	ft_strlen(char *str);
 int		ft_putchar(char str);
 int		ft_putstr(char *str);
-int		ft_puthexa(void *str);
+int		ft_putpointer(void *str);
 
 #endif

@@ -19,7 +19,7 @@ static int	str_conversion(char str, va_list vargs)
 	else if (str == 's')
 		return (ft_putstr(va_arg(vargs, char *)));
 	else if (str == 'p')
-		return (ft_puthexa(va_arg(vargs, void *)));
+		return (ft_putpointer(va_arg(vargs, void *)));
 	return (0);
 }
 
@@ -83,7 +83,7 @@ int	ft_printf(char const *str, ...)
 /*int	main(void)
 {
 	char str = 'J';
-	char *str_long = "Jesus";
+	char *str_long = "Hello";
 
 	ft_printf("hello i'm: %c\n", str);
 	ft_printf("hello i'm: %s", str_long);
