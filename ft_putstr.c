@@ -19,9 +19,9 @@ int	ft_putstr(char *str)
 	i = 0;
 	if (!str)
 	{
-		if (write(1, "NULL", 4) != 4)
+		if (write(1, "(nil)", 5) != 5)
 			return (-1);
-		return (4);
+		return (5);
 	}
 	while (str[i])
 	{
