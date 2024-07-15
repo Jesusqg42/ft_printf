@@ -6,7 +6,7 @@
 /*   By: jquiaro- <jquiaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:35:34 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/07/15 15:39:32 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/07/15 18:32:44 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,3 @@ int	ft_printf(char const *str, ...)
 	va_end(vargs);
 	return (let);
 }
-
-/*int	main(void)
-{
-	int num_one = 123456789;
-	int num_two = -987654321;
-
-	ft_printf("the first value is: %d and the second value: %i", num_one, num_two);
-    return (0);
-}*/
