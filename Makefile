@@ -5,6 +5,7 @@ SRCS = ft_printf.c \
 	ft_putchar.c \
 	ft_putstr.c \
 	ft_putpointer.c \
+	ft_putnbr.c \
 
 INCLUDE = ft_printf.h
 

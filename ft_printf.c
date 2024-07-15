@@ -6,7 +6,7 @@
 /*   By: jquiaro- <jquiaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:35:34 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/07/15 13:49:59 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/07/15 15:39:32 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static int	str_conversion(char str, va_list vargs)
 		return (ft_putstr(va_arg(vargs, char *)));
 	else if (str == 'p')
 		return (ft_putpointer(va_arg(vargs, void *)));
+	else if (str == 'd' || str == 'i')
+		return (ft_putnbr(va_arg(vargs, int)));
 	return (0);
 }
 
@@ -82,11 +84,9 @@ int	ft_printf(char const *str, ...)
 
 /*int	main(void)
 {
-	char *str = "Hello";
-	char *str_two = "Welcome";
-	void *str_three = "Good-Bye";
+	int num_one = 123456789;
+	int num_two = -987654321;
 
-	printf("uno: <<%p>>\ndos: <<%p>>\ntres: <<%p>>\n-----------------------------\n", str, str_two, str_three);
-	ft_printf("first: <<%p>>\nsecond: <<%p>>\nthird: <<%p>>", str, str_two, str_three);
+	ft_printf("the first value is: %d and the second value: %i", num_one, num_two);
     return (0);
 }*/
