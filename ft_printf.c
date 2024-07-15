@@ -6,7 +6,7 @@
 /*   By: jquiaro- <jquiaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:35:34 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/06/27 18:35:40 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/07/15 13:49:59 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,11 @@ int	ft_printf(char const *str, ...)
 
 /*int	main(void)
 {
-	char str = 'J';
-	char *str_long = "Hello";
+	char *str = "Hello";
+	char *str_two = "Welcome";
+	void *str_three = "Good-Bye";
 
-	ft_printf("hello i'm: %c\n", str);
-	ft_printf("hello i'm: %s", str_long);
+	printf("uno: <<%p>>\ndos: <<%p>>\ntres: <<%p>>\n-----------------------------\n", str, str_two, str_three);
+	ft_printf("first: <<%p>>\nsecond: <<%p>>\nthird: <<%p>>", str, str_two, str_three);
     return (0);
 }*/
