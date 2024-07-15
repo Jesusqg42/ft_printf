@@ -6,7 +6,7 @@
 /*   By: jquiaro- <jquiaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 21:36:56 by marvin            #+#    #+#             */
-/*   Updated: 2024/07/15 18:35:41 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/07/15 19:00:36 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_putpointer(void *str)
 	unsigned long long	cast_str;
 	int					let;
 
+	if (!str)
+		return (ft_putstr("(nil)"));
 	cast_str = (unsigned long long)str;
 	let = 0;
 	ft_putstr("0x");
