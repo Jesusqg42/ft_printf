@@ -6,7 +6,7 @@
 /*   By: jquiaro- <jquiaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 21:25:08 by marvin            #+#    #+#             */
-/*   Updated: 2024/07/15 18:51:54 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/07/16 10:18:37 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putstr(char *str)
 	i = 0;
 	if (!str)
 	{
-		if (write(1, "(NULL)", 6) != 6)
+		if (write(1, "(null)", 6) != 6)
 			return (-1);
 		return (6);
 	}
