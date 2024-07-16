@@ -6,6 +6,9 @@ SRCS = ft_printf.c \
 	ft_putstr.c \
 	ft_putpointer.c \
 	ft_putnbr.c \
+	ft_putnosign.c \
+	ft_puthexa_min.c \
+	ft_puthexa_may.c
 
 INCLUDE = ft_printf.h
 

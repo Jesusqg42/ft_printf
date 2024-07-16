@@ -6,7 +6,7 @@
 /*   By: jquiaro- <jquiaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:35:34 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/07/15 19:00:08 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/07/16 10:49:32 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ static int	str_conversion(char str, va_list vargs)
 		return (ft_putpointer(va_arg(vargs, void *)));
 	else if (str == 'd' || str == 'i')
 		return (ft_putnbr(va_arg(vargs, int)));
-	return (0);
+	else if (str == 'u')
+		return (ft_putnosign(va_arg(vargs, unsigned int)));
+	else if (str == 'x')
+		return (ft_puthexa_min(va_arg(vargs, int)));
+	else if (str == 'X')
+		return (ft_puthexa_may(va_arg(vargs, int)));
+	else
+		return (0);
 }
 
 static int	str_percent(char str, va_list vargs)
