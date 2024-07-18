@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jquiaro- <jquiaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/07 21:25:08 by marvin            #+#    #+#             */
-/*   Updated: 2024/07/16 15:38:49 by jquiaro-         ###   ########.fr       */
+/*   Created: 2024/07/17 11:55:53 by jquiaro-          #+#    #+#             */
+/*   Updated: 2024/07/17 12:09:48 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *str)
+int	ft_puthexa(unsigned int num, char str)
 {
-	int	i;
+	int		let;
+	char	*hexa;
 
-	i = 0;
-	if (!str)
-	{
-		if (write(1, "(null)", 6) != 6)
-			return (-1);
-		return (6);
-	}
-	while (str[i])
-	{
-		if (write(1, &str[i], 1) != 1)
-			return (-1);
-		i++;
-	}
-	return (i);
+	let = 0;
+	hexa = NULL;
+	if (str == 'x')
+		hexa = "0123456789abcdef";
+	else if (str == 'X')
+		hexa = "0123456789ABCDEF";
+	if (num >= 16)
+		let += ft_puthexa(num / 16, str);
+	let += ft_putchar(hexa[num % 16]);
+	return (let);
 }

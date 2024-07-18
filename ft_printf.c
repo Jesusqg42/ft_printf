@@ -6,7 +6,7 @@
 /*   By: jquiaro- <jquiaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:35:34 by jquiaro-          #+#    #+#             */
-/*   Updated: 2024/07/16 10:49:32 by jquiaro-         ###   ########.fr       */
+/*   Updated: 2024/07/17 21:31:13 by jquiaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,71 +20,37 @@ static int	str_conversion(char str, va_list vargs)
 		return (ft_putstr(va_arg(vargs, char *)));
 	else if (str == 'p')
 		return (ft_putpointer(va_arg(vargs, void *)));
+	else if (str == '%')
+		return (ft_putchar('%'));
 	else if (str == 'd' || str == 'i')
 		return (ft_putnbr(va_arg(vargs, int)));
 	else if (str == 'u')
 		return (ft_putnosign(va_arg(vargs, unsigned int)));
-	else if (str == 'x')
-		return (ft_puthexa_min(va_arg(vargs, int)));
-	else if (str == 'X')
-		return (ft_puthexa_may(va_arg(vargs, int)));
-	else
-		return (0);
+	else if (str == 'x' || str == 'X')
+		return (ft_puthexa(va_arg(vargs, int), str));
+	return (0);
 }
 
-static int	str_percent(char str, va_list vargs)
+int	ft_printf(char const *s, ...)
 {
-	int	let;
-
-	let = 0;
-	if (str != '%')
-	{
-		let = str_conversion(str, vargs);
-		if (!let)
-			return (-1);
-		return (let);
-	}
-	else
-	{
-		if (write(1, &str, 1) != 1)
-			return (-1);
-		return (1);
-	}
-}
-
-static int	str_iterator(char const *str, va_list vargs, int let)
-{
-	int	i;
+	va_list	vargs;
+	int		i;
+	int		let;
 
 	i = 0;
-	while (str[i])
+	let = 0;
+	va_start(vargs, s);
+	while (s[i])
 	{
-		if (str[i] == '%')
+		if (s[i] == '%')
 		{
-			let += str_percent(str[i + 1], vargs);
-			if (!let)
-				return (-1);
+			let += str_conversion(s[i + 1], vargs);
 			i++;
 		}
 		else
-		{
-			if (write(1, &str[i], 1) != 1)
-				return (-1);
-			let++;
-		}
+			let += ft_putchar(s[i]);
 		i++;
 	}
-	return (let);
-}
-
-int	ft_printf(char const *str, ...)
-{
-	int		let;
-	va_list	vargs;
-
-	va_start(vargs, str);
-	let = 0;
-	let = str_iterator(str, vargs, let);
 	va_end(vargs);
 	return (let);
 }

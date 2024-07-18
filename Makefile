@@ -7,25 +7,19 @@ SRCS = ft_printf.c \
 	ft_putpointer.c \
 	ft_putnbr.c \
 	ft_putnosign.c \
-	ft_puthexa_min.c \
-	ft_puthexa_may.c
+	ft_puthexa.c
 
-INCLUDE = ft_printf.h
-
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 AR = ar rcs
 
-%.o: %.c ${INCLUDE}
-	@${CC} ${CFLAGS} -c $< -o $@
-
 OBJS = ${SRCS:.c=.o}
+
+all: ${NAME}
 
 ${NAME}: ${OBJS}
 	@${AR} ${NAME} ${OBJS}
-
-all: ${NAME}
 
 clean:
 	@${RM} ${OBJS}
